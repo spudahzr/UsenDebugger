@@ -55,6 +55,30 @@ class OnsemiParaEncode(object):
         encode_data.extend(self.onsemi_conver_byte(checksum, 8))
         return encode_data
 
+    def encode_txburst_pulsecnt(self, tx_burst):
+        write_bit = 0
+        reg_addr = 3
+        encode_data = [self.__Tdata_Def['Onsemi_CmdPluse_Def'], self.__Tdata_Def['Onsemi_CmdSep_Def']]
+        conver_byte = [tx_burst]
+        checksum = self.onsemi_calc_checksum(write_bit, reg_addr, conver_byte)
+        encode_data.extend(self.onsemi_conver_byte(write_bit, 1))
+        encode_data.extend(self.onsemi_conver_byte(reg_addr, 4))
+        encode_data.extend(self.onsemi_conver_byte(tx_burst, 5))
+        encode_data.extend(self.onsemi_conver_byte(checksum, 8))
+        return encode_data
+
+    def encode_meas_duration(self, mesa_dura):
+        write_bit = 0
+        reg_addr = 4
+        encode_data = [self.__Tdata_Def['Onsemi_CmdPluse_Def'], self.__Tdata_Def['Onsemi_CmdSep_Def']]
+        conver_byte = [mesa_dura]
+        checksum = self.onsemi_calc_checksum(write_bit, reg_addr, conver_byte)
+        encode_data.extend(self.onsemi_conver_byte(write_bit, 1))
+        encode_data.extend(self.onsemi_conver_byte(reg_addr, 4))
+        encode_data.extend(self.onsemi_conver_byte(mesa_dura, 4))
+        encode_data.extend(self.onsemi_conver_byte(checksum, 8))
+        return encode_data
+
     def encode_thr(self, thr_num, lvl, dt):
         write_bit = 0
         if thr_num == 1:

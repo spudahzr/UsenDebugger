@@ -30,6 +30,8 @@ class UsenMainWindow(QMainWindow, Ui_MainWindow, OnsemiParaEncode):
         self.onsemiSetDefine_Button.clicked.connect(self.setting_onsemi_defined)
         self.OnsemiCarrierPer_GenerateButton.clicked.connect(self.generate_onsemi_carrier_period)
         self.OnsemiDeltaPer_GenerateButton.clicked.connect(self.generate_onsemi_delta_period)
+        self.OnsemiTxBurstPulse_GenerateButton.clicked.connect(self.generate_onsemi_txBurstPulse)
+        self.OnsemiMeasDura_GenerateButton.clicked.connect(self.generate_onsemi_meas_duration)
         self.OnsemiThr1_GenerateButton.clicked.connect(lambda: self.generate_onsemi_thres(1))
         self.OnsemiThr2_GenerateButton.clicked.connect(lambda: self.generate_onsemi_thres(2))
 
@@ -51,6 +53,16 @@ class UsenMainWindow(QMainWindow, Ui_MainWindow, OnsemiParaEncode):
         dt_rx_per = self.OnsemiDrx_Per.value()
         dt_per_encode = self.encode_detal_period(dt_tx_per, dt_rx_per)
         self.OnsemiDtCarrierPer_CodeText.setText(', '.join(dt_per_encode))
+
+    def generate_onsemi_txBurstPulse(self):
+        txBurst_PulseCnt = self.OnsemiTxBurstPulseCnt.value()
+        txBurst_encode = self.encode_txburst_pulsecnt(txBurst_PulseCnt)
+        self.OnsemiTxBurstPulse_CodeText.setText(', '.join(txBurst_encode))
+
+    def generate_onsemi_meas_duration(self):
+        meas_dura = self.OnsemiMeasDura.value()
+        meas_dura_encode = self.encode_meas_duration(meas_dura)
+        self.OnsemiMeasDura_CodeText.setText(', '.join(meas_dura_encode))
 
     def generate_onsemi_thres(self, thr_num):
         # thr_lvl = [lvl.value() for lvl in self.comp_onsemiThr1_Lvlx]

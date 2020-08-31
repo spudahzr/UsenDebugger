@@ -1552,7 +1552,7 @@
       <property name="title">
        <string>Index 3</string>
       </property>
-      <widget class="QTextBrowser" name="OnsemiCarrierPer_CodeText_2">
+      <widget class="QTextBrowser" name="OnsemiTxBurstPulse_CodeText">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1583,14 +1583,14 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="OnsemiCarrierPer_2">
+         <widget class="QSpinBox" name="OnsemiTxBurstPulseCnt">
           <property name="maximum">
            <number>31</number>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="OnsemiCarrierPer_GenerateButton_2">
+         <widget class="QPushButton" name="OnsemiTxBurstPulse_GenerateButton">
           <property name="acceptDrops">
            <bool>false</bool>
           </property>
@@ -1632,7 +1632,7 @@
       <property name="title">
        <string>Index 4</string>
       </property>
-      <widget class="QTextBrowser" name="OnsemiCarrierPer_CodeText_4">
+      <widget class="QTextBrowser" name="OnsemiMeasDura_CodeText">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1663,14 +1663,14 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="OnsemiCarrierPer_4">
+         <widget class="QSpinBox" name="OnsemiMeasDura">
           <property name="maximum">
            <number>15</number>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="OnsemiCarrierPer_GenerateButton_4">
+         <widget class="QPushButton" name="OnsemiMeasDura_GenerateButton">
           <property name="acceptDrops">
            <bool>false</bool>
           </property>
